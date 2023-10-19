@@ -68,11 +68,13 @@ resource "aws_route_table" "dep5_1_rte_tbl" {
   }
 }
 
+# configure route table association - subnet1
 resource "aws_route_table_association" "dep5_1_pubsubnet1_rta" {
   subnet_id      = aws_subnet.dep5_1_pubsubnet1.id
   route_table_id = aws_route_table.dep5_1_rte_tbl.id
 }
 
+# configure route table association - subnet2
 resource "aws_route_table_association" "dep5_1_pubsubnet2_rta" {
   subnet_id      = aws_subnet.dep5_1_pubsubnet2.id
   route_table_id = aws_route_table.dep5_1_rte_tbl.id
@@ -149,6 +151,14 @@ resource "aws_security_group" "dep5_1_allow_traffic_pubsubnet1" {
 
   ingress {
     description = "allow incoming traffic on port 8080"
+    from_port   = 8000
+    to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "allow incoming traffic on port 8080"
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
@@ -183,6 +193,14 @@ resource "aws_security_group" "dep5_1_allow_traffic_pubsubnet2" {
     description = "allow incoming traffic on port 8000 "
     from_port   = 8000
     to_port     = 8000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "allow incoming traffic on port 8080"
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
