@@ -37,7 +37,7 @@ A route table was configured to allow internet access from the public subnets.
 This architecture provides loose coupling between the layers, with the agents and app servers separated from the Jenkins controller. The public subnets allow inbound internet access which is required for this use case.
 
 ## Jenkins/Jenkins Agent Architecture
-The Jenkins server and Jenkins agent utilize a master-slave architecture to enable distributed builds.
+The Jenkins server and Jenkins agent utilize a controller-agent architecture to enable distributed builds.
 
 **Jenkins Server**:
 - Hosting the Jenkins web UI and displaying build statuses/logs
@@ -47,10 +47,10 @@ The Jenkins server and Jenkins agent utilize a master-slave architecture to enab
 - Managing plugins, credentials, and global configurations
 
 **Jenkins Agent**:
-- Registering itself with the main Jenkins master
-- Accepting and executing build jobs assigned by the master
+- Registering itself with the main Jenkins server
+- Accepting and executing build jobs assigned by the controller
 - Performing actual build, test, package, and deploy steps
-- Communicating job results and artifacts back to master
+- Communicating job results and artifacts back to the Jenkins controller
 - Managing tools, dependencies, and resources required by jobs
 
 This separation of concerns provides scalability, availability, speed, and security benefits.
@@ -64,7 +64,7 @@ This separation of concerns provides scalability, availability, speed, and secur
 3. Launched EC2 instance for Jenkins agent and installed:
     - Python 3.7
     - Configured Jenkins agent using these [steps](https://www.jenkins.io/doc/book/using/using-agents/)
-    - Configured Jenkins agent to connect to master
+    - Configured Jenkins agent to connect to main Jenkins server
 4. Created Jenkins multibranch pipeline job
 5. Pushed app code to GitHub repository
 6. Configured Jenkins job to pull code from GitHub
