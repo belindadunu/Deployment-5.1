@@ -74,6 +74,14 @@ This separation of concerns provides scalability, availability, speed, and secur
 10. Configured Jenkins job to deploy to app servers
 11. Tested app deployed and accessible from both servers
 
+<img width="1109" alt="Screen Shot 2023-10-21 at 8 24 28 AM" src="https://github.com/belindadunu/Deployment-5.1/assets/139175163/e153dadd-193a-4506-baf3-e61c39443b3d">
+_Image from the Jenkins agent server_
+
+<img width="615" alt="Screen Shot 2023-10-15 at 10 16 27 AM" src="https://github.com/belindadunu/Deployment-5.1/assets/139175163/97681df1-a1a5-48e8-961c-da3085b7643f">
+_Image from the web application server_
+
+
+
 ## Issues
 - Instances were shutting down automatically at 9 pm daily, causing loss of unsaved work on the README.md documentation. This highlighted the need to commit changes more frequently.
 - Was initially unable to SSH into the agents due to not using the correct key pair. Verified the key pair being used matched the one specified in the Terraform build.
