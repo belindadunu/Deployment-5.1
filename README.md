@@ -91,4 +91,4 @@ By placing backend components like the database and Jenkins into private subnets
 ## Conclusion
 This project demonstrated core DevOps practices by implementing a full CI/CD pipeline for a multi-server architecture. Key takeaways include learning how to automate deployments with Jenkins, create repeatable infrastructure as code, and deploy applications across availability zones for high availability. The result is an automated, robust process for continuously building, testing, and deploying this Banking application.
 
-![Dep5 1](https://github.com/belindadunu/Deployment-5.1/assets/139175163/4cb4f615-5634-46f7-9db0-0efcf90804be)
+![Dep5 1_redo](https://github.com/belindadunu/Deployment-5.1/assets/139175163/f603d604-41f3-46b6-88bd-5bff8cbe9d10)
