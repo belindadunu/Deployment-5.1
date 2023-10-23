@@ -70,19 +70,11 @@ This separation of concerns provides scalability, availability, speed, and secur
 6. Configured Jenkins job to pull code from GitHub
 7. Jenkins job builds and deploys app to agent EC2
 8. Tested app was accessible on agent
-9. Created 2 EC2 instances for app servers
+9. Created another EC2 instance for app server
 10. Configured Jenkins job to deploy to app servers
 11. Tested app deployed and accessible from both servers
 
 <img width="1109" alt="Screen Shot 2023-10-21 at 8 24 28 AM" src="https://github.com/belindadunu/Deployment-5.1/assets/139175163/e153dadd-193a-4506-baf3-e61c39443b3d">
-
-_Image from the Jenkins agent server_
-
-<img width="615" alt="Screen Shot 2023-10-15 at 10 16 27 AM" src="https://github.com/belindadunu/Deployment-5.1/assets/139175163/97681df1-a1a5-48e8-961c-da3085b7643f">
-
-_Image from the web application server_
-
-
 
 ## Issues
 - Instances were shutting down automatically at 9 pm daily, causing loss of unsaved work on the README.md documentation. This highlighted the need to commit changes more frequently.
@@ -101,4 +93,4 @@ By placing backend components like the database and Jenkins into private subnets
 ## Conclusion
 This project demonstrated core DevOps practices by implementing a full CI/CD pipeline for a multi-server architecture. Key takeaways include learning how to automate deployments with Jenkins, create repeatable infrastructure as code, and deploy applications across availability zones for high availability. The result is an automated, robust process for continuously building, testing, and deploying this Banking application.
 
-![Dep5 1_redo](https://github.com/belindadunu/Deployment-5.1/assets/139175163/f603d604-41f3-46b6-88bd-5bff8cbe9d10)
+![Dep5 1](https://github.com/belindadunu/Deployment-5.1/assets/139175163/8867e408-4a25-47ae-83a2-cf911f07a936)
